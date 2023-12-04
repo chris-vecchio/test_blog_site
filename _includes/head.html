@@ -19,6 +19,14 @@
 <!--   <script type="text/javascript" src="{{ site.baseurl }}/js/highlightjs/languages/powershell.min.js"></script> -->
 <!--   <script type="text/javascript" src="{{ site.baseurl }}/js/highlightjs/languages/tsql.min.js"></script> -->
 
-  <script type="text/javascript"> hljs.highlightAll(); hljs.addPlugin(new CopyButtonPlugin());</script>
+  <script>
+    hljs.highlightAll();
+    // hljs.addPlugin(new CopyButtonPlugin());
+hljs.addPlugin(
+  new CopyButtonPlugin({
+    callback: (text, el) => console.log("Copied to clipboard", text),
+  })
+);
+  </script>
   <!-- end highlight.js support -->
 </head>
